@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos | MoneyOS</title>
+  <link rel="stylesheet" href="produtos.css" />
+</head>
+<body>
+  <header>
+    <button onclick="location.href='pagehome.html'">← Voltar</button>
+    <h1>MoneyOS - Produtos</h1>
+    <button id="toggleTheme">🌗</button>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div>Total de Produtos: <span id="totalProducts">0</span></div>
+      <div>Produtos Esgotados: <span id="outOfStock">0</span></div>
+      <div>Valor Total em Estoque: R$ <span id="totalValue">0,00</span></div>
+    </section>
+
+    <section class="actions">
+      <input type="text" id="searchInput" placeholder="Buscar produto..." />
+      <select id="categoryFilter">
+        <option value="all">Todas Categorias</option>
+      </select>
+      <select id="statusFilter">
+        <option value="all">Todos</option>
+        <option value="disponivel">Disponível</option>
+        <option value="esgotado">Esgotado</option>
+      </select>
+      <input type="number" id="minPrice" placeholder="Preço mín" />
+      <input type="number" id="maxPrice" placeholder="Preço máx" />
+      <button id="toggleView">Alternar Exibição</button>
+      <button id="openModal">+ Adicionar Produto</button>
+    </section>
+
+    <section id="productList" class="table-view">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Unidade</th>
+            <th>Preço Unitário</th>
+            <th>Quantidade</th>
+            <th>Status</th>
+            <th>Atualização</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+ 
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Cadastrar Produto</h2>
+        <form id="productForm">
+          <input type="hidden" name="id" />
+          <label>Nome<br /><input type="text" name="name" required /></label>
+          <label>Descrição<br /><textarea name="description"></textarea></label>
+          <label>Unidade<br /><input type="text" name="unit" placeholder="Ex.: kg, un, cx" required /></label>
+          <label>Preço Unitário<br /><input type="number" step="0.01" name="price" required /></label>
+          <label>Quantidade em estoque<br /><input type="number" name="quantity" required /></label>
+          <label>Categoria<br />
+            <select name="category"></select>
+            <button type="button" id="addCategory">+ Categoria</button>
+          </label>
+          <label>Status<br />
+            <select name="status">
+              <option value="disponivel">Disponível</option>
+              <option value="esgotado">Esgotado</option>
+            </select>
+          </label>
+          <div class="modal-actions">
+            <button type="submit">Salvar</button>
+            <button type="button" id="closeModal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div id="categoryModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Adicionar Categoria</h2>
+        <input type="text" id="newCategory" placeholder="Nome da categoria" />
+        <div class="modal-actions">
+          <button id="saveCategory">Salvar</button>
+          <button id="closeCategoryModal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="produtos.js"></script>
+</body>
+</html>

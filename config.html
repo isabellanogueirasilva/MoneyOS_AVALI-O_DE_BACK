@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurações - MoneyOS</title>
+  <link rel="stylesheet" href="config.css" />
+</head>
+<body>
+  <header>
+    <button onclick="window.location.href='pagehome.html'">← Voltar</button>
+    <h1>MoneyOS - Configurações</h1>
+    <button id="toggleTheme">🌗</button>
+  </header>
+
+  <main>
+    <section class="foto-perfil">
+      <h2>Foto de Perfil</h2>
+      <input type="file" accept="image/*" />
+    </section>
+
+    <section>
+      <h2>Notificações</h2>
+      <label><input type="checkbox" checked /> Receber por e-mail</label>
+      <label><input type="checkbox" /> Receber por SMS</label>
+    </section>
+
+    <section>
+      <h2>Idioma</h2>
+      <select id="idioma">
+        <option value="pt">Português</option>
+        <option value="en">Inglês</option>
+        <option value="es">Espanhol</option>
+      </select>
+    </section>
+
+    <details>
+      <summary>📌 Dados Pessoais</summary>
+      <div class="dados">
+        <label>Nome completo: <input type="text" value="Fulano de Tal" /></label>
+        <label>Idade: <input type="number" value="30" /></label>
+        <label>Estado Civil: <input type="text" value="Solteiro(a)" /></label>
+        <label>Ocupação: <input type="text" value="Empresário(a)" /></label>
+        <label>Status: <input type="text" value="Ativo" /></label>
+      </div>
+    </details>
+
+    <details>
+      <summary>🏢 Dados Empresariais</summary>
+      <div class="dados">
+        <label>Razão Social: <input type="text" value="MoneyOS LTDA" /></label>
+        <label>CNPJ: <input type="text" value="00.000.000/0001-00" /></label>
+        <label>Segmento: <input type="text" value="Tecnologia Financeira" /></label>
+        <label>Funcionários: <input type="number" value="12" /></label>
+        <label>Faturamento Mensal: <input type="text" value="R$ 50.000,00" /></label>
+        <label>Clientes: <input type="number" value="350" /></label>
+      </div>
+    </details>
+
+    <button class="salvar">💾 Salvar Alterações</button>
+  </main>
+
+  <script src="config.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+:root {
+  --cor-fundo-claro: #cecefda2;
+  --cor-texto-claro: #222;
+  --cor-primaria:#008cff;
+  --cor-secundaria: #3b82f6;
+  --cor-acento: #38bdf8;
+
+  --cor-fundo-escuro: #1f2937;
+  --cor-texto-escuro: #f3f4f6;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--cor-fundo-claro);
+  color: var(--cor-texto-claro);
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--cor-fundo-escuro);
+  color: var(--cor-texto-escuro);
+}
+
+header {
+  background-color: var(--cor-primaria);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+#toggle-theme {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+form input,
+form select,
+form button {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+}
+
+button {
+  background-color: var(--cor-secundaria);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--cor-acento);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.alerta {
+  color: var(--cor-vermelho);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico e Relatórios | MoneyOS</title>
+  <link rel="stylesheet" href="historico.css" />
+</head>
+<body>
+  <header>
+    <button onclick="location.href='pagehome.html'">← Voltar</button>
+    <h1>MoneyOS - Histórico e Relatórios</h1>
+    <button id="toggleTheme">🌗</button>
+  </header>
+
+  <main>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="acessos">Acessos</button>
+      <button class="tab" data-tab="atividades">Atividades</button>
+      <button class="tab" data-tab="anexos">Anexos</button>
+      <button class="tab" data-tab="relatorios">Relatórios</button>
+    </nav>
+
+
+    <section class="filters">
+      <input type="text" id="searchInput" placeholder="Buscar..." />
+      <input type="text" id="filterUserId" placeholder="ID Usuário" />
+      <input type="date" id="filterDate" />
+    </section>
+
+
+    <section id="content">
+
+      <div class="tab-content active" id="acessos">
+        <h2>Acessos</h2>
+        <div class="actions">
+          <button onclick="openModal('acessos')">+ Adicionar</button>
+          <button onclick="exportData('acessos','csv')">Exportar CSV</button>
+          <button onclick="exportData('acessos','pdf')">Exportar PDF</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID Usuário</th>
+              <th>IP</th>
+              <th>Navegador</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="tab-content" id="atividades">
+        <h2>Atividades</h2>
+        <div class="actions">
+          <button onclick="openModal('atividades')">+ Adicionar</button>
+          <button onclick="exportData('atividades','csv')">Exportar CSV</button>
+          <button onclick="exportData('atividades','pdf')">Exportar PDF</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID Usuário</th>
+              <th>Tipo</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+  
+      <div class="tab-content" id="anexos">
+        <h2>Anexos</h2>
+        <div class="actions">
+          <button onclick="openModal('anexos')">+ Adicionar</button>
+          <button onclick="exportData('anexos','csv')">Exportar CSV</button>
+          <button onclick="exportData('anexos','pdf')">Exportar PDF</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID Usuário</th>
+              <th>Transação</th>
+              <th>Nome do Arquivo</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+
+      <div class="tab-content" id="relatorios">
+        <h2>Relatórios</h2>
+        <div class="actions">
+          <button onclick="openModal('relatorios')">+ Adicionar</button>
+          <button onclick="exportData('relatorios','csv')">Exportar CSV</button>
+          <button onclick="exportData('relatorios','pdf')">Exportar PDF</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID Usuário</th>
+              <th>Tipo</th>
+              <th>Filtro Aplicado</th>
+              <th>Gerado em</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <form id="modalForm"></form>
+      <div class="modal-actions">
+        <button onclick="saveData()">Salvar</button>
+        <button onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="historico.js"></script>
+</body>
+</html>

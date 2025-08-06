@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificações | MoneyOS</title>
+  <link rel="stylesheet" href="notificacoes.css">
+</head>
+<body>
+  <header>
+    <button onclick="location.href='pagehome.html'">← Voltar</button>
+    <h1>MoneyOS - Notificações</h1>
+    <button id="toggleTheme">🌗</button>
+  </header>
+
+  <main>
+    <section class="actions">
+      <input type="text" id="searchInput" placeholder="Buscar notificações...">
+      <select id="filterType">
+        <option value="all">Todos os Tipos</option>
+        <option value="financeiro">Financeiro</option>
+        <option value="produto">Produto</option>
+        <option value="cliente">Cliente</option>
+        <option value="sistema">Sistema</option>
+      </select>
+      <select id="filterStatus">
+        <option value="all">Todos</option>
+        <option value="naoLida">Não lidas</option>
+        <option value="lida">Lidas</option>
+      </select>
+      <button id="markAllRead">Marcar todas como lidas</button>
+      <button id="clearAll">Excluir todas</button>
+    </section>
+
+    <section id="notificationList" class="card-container">
+    </section>
+  </main>
+
+  <script src="notificacoes.js"></script>
+</body>
+</html>

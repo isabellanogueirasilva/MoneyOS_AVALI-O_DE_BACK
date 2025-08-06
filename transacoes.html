@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transações - MoneyOS</title>
+  <link rel="stylesheet" href="transacoes.css" />
+</head>
+<body>
+  <header>
+    <h1>MoneyOS</h1>
+    <button id="toggle-theme">🌙</button>
+  </header>
+
+  <main>
+    <a href="pagehome.html" class="btn-voltar">⬅ Voltar</a>
+
+    <section class="resumo">
+      <h2>Resumo Rápido</h2>
+      <p><strong>Total de Entradas:</strong> R$ <span id="total-entradas">0</span></p>
+      <p><strong>Total de Saídas:</strong> R$ <span id="total-saidas">0</span></p>
+      <p><strong>Saldo Total:</strong> R$ <span id="saldo-total">0</span></p>
+      <div class="alerta" id="alerta-gastos"></div>
+    </section>
+
+    <section class="filtros">
+      <h2>Filtros e Pesquisa</h2>
+      <select id="filtro-tipo">
+        <option value="">Todos</option>
+        <option value="entrada">Entrada</option>
+        <option value="saida">Saída</option>
+      </select>
+      <select id="filtro-categoria">
+        <option value="">Categoria</option>
+        <option value="alimentacao">Alimentação</option>
+        <option value="transporte">Transporte</option>
+        <option value="lazer">Lazer</option>
+      </select>
+      <input type="text" id="busca-nome" placeholder="Buscar por nome ou descrição" />
+    </section>
+
+    <section class="formulario">
+      <h2>Nova Transação</h2>
+      <form id="form-transacao">
+        <input type="text" id="descricao" placeholder="Descrição" required />
+        <input type="number" id="valor" placeholder="Valor (R$)" required />
+        <select id="tipo" required>
+          <option value="">Tipo</option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saída</option>
+        </select>
+        <select id="categoria" required>
+          <option value="">Categoria</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="transporte">Transporte</option>
+          <option value="lazer">Lazer</option>
+        </select>
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <section class="lista">
+      <h2>Transações</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-transacoes"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="transacoes.js"></script>
+</body>
+</html>

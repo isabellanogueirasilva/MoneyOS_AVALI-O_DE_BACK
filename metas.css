@@ -1,0 +1,158 @@
+:root {
+  --bg-light:hsl(0, 0%, 100%);
+  --bg-dark: #1e1e1e;
+  --text-light: #000;
+  --text-dark: #fff;
+  --primary:  #cecefd;
+  --danger: #e74c3c;
+  --warning: #f1c40f;
+  --success: #27ae60;
+  --card:  #cecefd;
+  --card-dark: #2c2c2c;
+}
+
+[data-theme="dark"] {
+  --bg-light: var(--bg-dark);
+  --text-light: var(--text-dark);
+  --card: var(--card-dark);
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-light);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: var(--primary);
+  color: #008cff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.voltar, .modo {
+  background: transparent;
+  border: none;
+  color:#008cff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+h1 {
+  margin: 0;
+}
+
+.resumo {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtros input, .filtros select, .filtros button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.metas {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.meta {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary);
+  position: relative;
+}
+
+.barra {
+  height: 10px;
+  background: #ccc;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.barra span {
+  display: block;
+  height: 100%;
+  background: var(--success);
+}
+
+.meta .acoes {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.meta .acoes button {
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.meta.atrasada {
+  border-left-color: var(--danger);
+}
+
+.meta.pendente {
+  border-left-color: var(--warning);
+}
+
+.alertas {
+  padding: 1rem;
+  color: var(--danger);
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal form {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.botoes-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}

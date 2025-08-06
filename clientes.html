@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes | MoneyOS</title>
+  <link rel="stylesheet" href="clientes.css" />
+</head>
+<body>
+  <header>
+    <button onclick="location.href='pagehome.html'">← Voltar</button>
+    <h1>MoneyOS - Clientes</h1>
+    <button id="toggleTheme">🌗</button>
+  </header>
+  <main>
+    <section class="actions">
+      <input type="text" id="searchInput" placeholder="Buscar cliente..." />
+      <select id="statusFilter">
+        <option value="all">Todos</option>
+        <option value="ativo">Ativo</option>
+        <option value="inativo">Inativo</option>
+      </select>
+      <button id="openModal">+ Adicionar Cliente</button>
+    </section>
+
+    <section class="table-wrapper">
+      <table id="clientsTable">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Empresa</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Adicionar Cliente</h2>
+        <form id="clientForm">
+          <label>Nome<br /><input type="text" name="name" required /></label>
+          <label>Email<br /><input type="email" name="email" required /></label>
+          <label>Telefone<br /><input type="tel" name="phone" /></label>
+          <label>Empresa<br /><input type="text" name="company" /></label>
+          <label>Status<br />
+            <select name="status">
+              <option value="ativo">Ativo</option>
+              <option value="inativo">Inativo</option>
+            </select>
+          </label>
+          <div class="modal-actions">
+            <button type="submit">Salvar</button>
+            <button type="button" id="closeModal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="clientes.js"></script>
+</body>
+</html>

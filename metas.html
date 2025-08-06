@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoneyOS - Metas</title>
+  <link rel="stylesheet" href="metas.css">
+</head>
+<body>
+  <header>
+    <button onclick="history.back()" class="voltar">← Voltar</button>
+    <h1>MoneyOS - Metas</h1>
+    <button onclick="toggleTheme()" class="modo">🌓</button>
+  </header>
+
+  <section class="resumo">
+    <div class="card">🎯 Total de Metas: <span id="totalMetas">0</span></div>
+    <div class="card">📊 Metas Concluídas: <span id="metasConcluidas">0</span></div>
+  </section>
+
+  <section class="alertas" id="alertas"></section>
+
+  <section class="filtros">
+    <select id="filtroStatus">
+      <option value="todas">Todas</option>
+      <option value="andamento">Em Andamento</option>
+      <option value="concluida">Concluída</option>
+    </select>
+    <input type="text" id="buscaMeta" placeholder="🔍 Buscar meta...">
+    <button onclick="abrirFormulario()">+ Nova Meta</button>
+  </section>
+
+  <section class="metas" id="listaMetas"></section>
+
+  <div class="modal" id="formularioMeta">
+    <form onsubmit="salvarMeta(event)">
+      <h2>Nova Meta</h2>
+      <label>Nome da Meta:</label>
+      <input type="text" id="nomeMeta" required>
+
+      <label>Valor Objetivo (R$):</label>
+      <input type="number" id="valorObjetivo" required>
+
+      <label>Valor Atual (R$):</label>
+      <input type="number" id="valorAtual" required>
+
+      <label>Data Limite:</label>
+      <input type="date" id="dataLimite" required>
+
+      <label>Categoria:</label>
+      <input type="text" id="categoriaMeta">
+
+      <label>Produtos/Itens (opcional):</label>
+      <input type="text" id="itensMeta">
+
+      <label>Estratégia ou Dica:</label>
+      <textarea id="estrategiaMeta"></textarea>
+
+      <div class="botoes-form">
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="fecharFormulario()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="metas.js"></script>
+</body>
+</html>
